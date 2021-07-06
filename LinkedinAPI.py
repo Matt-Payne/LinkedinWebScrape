@@ -36,7 +36,7 @@ class LinkedinWebScrape():
         username = driver.find_element_by_name('session_key')
 
         # send_keys() to simulate key strokes
-        username.send_keys('naw3228@gmail.com')
+        username.send_keys(self.username)
 
         # sleep for 0.5 seconds
         sleep(0.5)
@@ -45,7 +45,7 @@ class LinkedinWebScrape():
         password = driver.find_element_by_name('session_password')
 
         # send_keys() to simulate key strokes
-        password.send_keys('WhiteWizards3228!')
+        password.send_keys(self.password)
         sleep(0.5)
 
         # locate submit button by_xpath
