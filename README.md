@@ -1,7 +1,7 @@
 # LinkedinWebScrape
 This is a script used to scrape the information from a LinkedIn profile using a provided account and using selenium
 
-##Table of Contents
+## Table of Contents
 * [General info](#general-information)
 * [Technologies](#technologies)
 * [Setup](#setup)
