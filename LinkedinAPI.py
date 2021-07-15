@@ -1,10 +1,9 @@
 # imports
-import csv
-from symbol import parameters
 from time import sleep
 from selenium import webdriver
 from bs4 import BeautifulSoup as bs
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
 import json
 
 
@@ -16,6 +15,7 @@ class LinkedinWebScrape():
     volunteer_final = []
     certificate_final = []
     course_final = []
+    skills_final = []
     driver = ''
 
 
@@ -69,13 +69,30 @@ class LinkedinWebScrape():
         global certificate_final
         global volunteer_final
         global course_final
+        global skills_final
         name_final = ''
         experience_final = []
         education_final = []
         certificate_final = []
         volunteer_final = []
         course_final = []
+        skills_final = []
         driver.get(url)
+        scroll = driver.find_element_by_tag_name('html')
+        scroll.send_keys(Keys.END)
+        sleep(1)
+        scroll.send_keys(Keys.PAGE_UP)
+        sleep(1)
+        scroll.send_keys(Keys.PAGE_UP)
+        sleep(1)
+        try:
+            skills_show_more = driver.find_element_by_xpath('/html/body/div[6]/div[3]/div/div/div/div/div[3]/div/div/main/div/div/div[6]/div/section/div[2]/button')
+            ActionChains(driver).move_to_element(skills_show_more).perform()
+            sleep(0.5)
+        except:
+            pass
+        skills_show_more.click()
+        sleep(1)
         html = driver.page_source
         soup = bs(html, 'html.parser')
 
@@ -93,13 +110,28 @@ class LinkedinWebScrape():
         experience_list = soup.find_all(lambda tag: tag.name == 'section' and tag.has_attr('class') and tag['class'][0] == 'pv-profile-section__card-item-v2' and
                                                     tag['class'][1] == 'pv-profile-section' and tag['class'][2] == 'pv-position-entity' and tag['class'][3] == 'ember-view')
         for experience in experience_list:
-            role = experience.find(lambda tag: tag.name == 'h3' and tag.has_attr('class') and tag['class'][0] == 't-16' and
-                                                    tag['class'][1] == 't-black' and tag['class'][2] == 't-bold')
-            company_name = experience.find(lambda tag: tag.name == 'p' and tag.has_attr('class') and tag['class'][0] == 'pv-entity__secondary-title'
-                                                        and tag['class'][1] == 't-14' and tag['class'][2] == 't-black' and
-                                                        tag['class'][3] == 't-normal')
-            description = experience.find(lambda tag: tag.name == 'div' and tag.has_attr('class') and tag['class'][0] == 'inline-show-more-text')
-            experience_final.append({'Role': role.get_text().strip(),'Company Name': company_name.get_text().strip(), 'Description': description.get_text().strip()})
+            try:
+                role = experience.find(lambda tag: tag.name == 'h3' and tag.has_attr('class') and tag['class'][0] == 't-16' and
+                                                        tag['class'][1] == 't-black' and tag['class'][2] == 't-bold')
+            except:
+                role = ''
+                pass
+            try:
+                company_name = experience.find(lambda tag: tag.name == 'p' and tag.has_attr('class') and tag['class'][0] == 'pv-entity__secondary-title'
+                                                            and tag['class'][1] == 't-14' and tag['class'][2] == 't-black' and
+                                                            tag['class'][3] == 't-normal')
+            except:
+                company_name = ''
+                pass
+            try:
+                description = experience.find(lambda tag: tag.name == 'div' and tag.has_attr('class') and tag['class'][0] == 'inline-show-more-text')
+            except:
+                description = ''
+                pass
+            try:
+                experience_final.append({'Role': role.get_text().strip(),'Company Name': company_name.get_text().strip(), 'Description': description.get_text().strip()})
+            except:
+                pass
 
     def scrape_education(self, soup):
         global education_final
@@ -115,7 +147,14 @@ class LinkedinWebScrape():
             except:
                 education_description = education.find(lambda tag: tag.name == 'span' and tag.has_attr('class') and tag['class'][0] == 'activities-societies')
                 pass
-            education_final.append({'Education Name': education_name.get_text().strip(),'Education Level': education_level.get_text().strip(), 'Education Description' : education_description.get_text().strip()})
+            try:
+                education_final.append({'Education Name': education_name.get_text().strip(),
+                                        'Education Level': education_level.get_text().strip(),
+                                        'Education Description': education_description.get_text().strip()})
+            except AttributeError:
+                education_final.append({'Education Name': education_name.get_text().strip(),
+                                        'Education Level': education_level.get_text().strip(),
+                                        'Education Description': ''})
 
     def scrape_certificate(self, soup):
         global certificate_final
@@ -129,6 +168,7 @@ class LinkedinWebScrape():
             try:
                 certificate_id = certificate_info[2].get_text().strip()
             except:
+                certificate_id = ''
                 pass
             certificate_final.append({'Certificate Name': certificate_name.get_text(), 'Certification Issuer': certification_issuer, 'Certificate ID': certificate_id})
 
@@ -146,12 +186,15 @@ class LinkedinWebScrape():
     def scrape_course(self,soup):
         global course_final
         # Grabs Course Information
-        course_list = soup.find_all(lambda tag: tag.name == 'li' and tag.has_attr('class') and tag['class'][0] == 'pv-accomplishment-entity')
-
+        course_list = soup.find_all(lambda tag: tag.name == 'li' and tag.has_attr('class') and tag['class'][0] == 'pv-accomplishments-block__summary-list-item')
         for course in course_list:
-            course_name = course.find(lambda tag: tag.name == 'p' and tag.has_attr('class') and tag['class'][0] == 'pv-accomplishment-entity__title')
-            course_number = course.find(lambda tag: tag.name == 'p' and tag.has_attr('class') and tag['class'][0] == 'pv-accomplishment-entity__course-number')
-            course_final.append({'Course Name': course_name.get_text(), 'Course Number': course_number.get_text()})
+            course_final.append({'Course Name': course.get_text()})
+
+    def scrape_skills(self,soup):
+        global skills_final
+        skills_list = soup.find_all(lambda tag: tag.name == 'span' and tag.has_attr('class') and tag['class'][0] == 'pv-skill-category-entity__name-text')
+        for skill in skills_list:
+            skills_final.append({'Skill Name:': skill.get_text().strip()})
 
     def file_save(self):
         global name_final
@@ -160,18 +203,21 @@ class LinkedinWebScrape():
         global certificate_final
         global volunteer_final
         global course_final
+        global skills_final
         out_file = open("data.json", "w")
         output = {
             name_final: {
                 "Experience": experience_final,
                 "Education": education_final,
-                "Certification": certificate_final,
+                "Certifications": certificate_final,
                 "Volunteer": volunteer_final,
-                "Course": course_final
+                "Courses": course_final,
+                "Skills": skills_final
             }
         }
         json.dump(output, out_file, indent = 6)
         out_file.close()
+
 
 
 

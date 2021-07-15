@@ -1,46 +1,5 @@
-# LinkedinWebScrape
-This is a script used to scrape the information from a LinkedIn profile using a provided account and using selenium
-
-##Table of Contents
-* [General info](#general-information)
-* [Technologies](#technologies)
-* [Setup](#setup)
-* [Example of Usage](#example-of-usage)
-
-## General Information
-The aim of this project is to be able to quickly grab data from a LinkedIn profile and export it in a json format to
-train machine learning models on the information provided.
-
-## Technologies
-Project is created with:
-- Python 3.8
-- Selenium
-- BeautifulSoup
-
-## Setup
-To run this script simply download the repo, load it into an IDE of your choice and click run, or run the `LinkedinAPI.py` file
-from your command line using `Python 3.8`
-    
-### Example of Usage
-
-```
-temp = LinkedinWebScrape('C:/Users/temp/Desktop/chromedriver.exe','temp@gmail.com','password')
-
-temp.login()
-soup = temp.load_html('https://www.linkedin.com/in/temp/')
-temp.scrape_skills(soup)
-temp.scrape_course(soup)
-temp.scrape_name(soup)
-temp.scrape_certificate(soup)
-temp.scrape_volunteer(soup)
-temp.scrape_education(soup)
-temp.scrape_experience(soup)
-temp.file_save()
-```
-The JSON output from this file will look like the following
-```
 {
-      "Temp": {
+      "Osama Ehsan": {
             "Experience": [
                   {
                         "Role": "Quality Assurance Automation Engineer",
@@ -169,8 +128,3 @@ The JSON output from this file will look like the following
             ]
       }
 }
-```
-
-
-
- 
