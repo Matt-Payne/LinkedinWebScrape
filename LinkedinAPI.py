@@ -19,6 +19,7 @@ class LinkedinWebScrape():
     driver = ''
 
 
+
     def __init__(self, driver_location, username, password):
         self.driver_location = driver_location
         self.username = username
@@ -97,6 +98,40 @@ class LinkedinWebScrape():
         soup = bs(html, 'html.parser')
 
         return soup
+
+    '''
+    Getters for extractions
+
+    ##comment (can remove) - check this global formatting before merging, I'm iffy with classes
+    '''
+    def get_courses(self):
+        global course_final
+        return course_final
+
+    def get_skills(self):
+        global skills_final
+        return skills_final
+
+    def get_experiences(self):
+        global experience_final
+        return experience_final
+
+    def get_educations(self):
+        global education_final
+        return education_final
+
+    def get_certifications(self):
+        global certificate_final
+        return certificate_final
+
+    def get_volunteering(self):
+        global volunteer_final
+        return volunteer_final
+
+    def get_name(self):
+        global name_final
+        return name_final
+        
 
     def scrape_name(self, soup):
         global name_final
@@ -217,11 +252,3 @@ class LinkedinWebScrape():
         }
         json.dump(output, out_file, indent = 6)
         out_file.close()
-
-
-
-
-
-
-
-
