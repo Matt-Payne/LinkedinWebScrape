@@ -95,15 +95,11 @@ class LinkedinWebScrape():
         skills_show_more.click()
         sleep(1)
         html = driver.page_source
+
         soup = bs(html, 'html.parser')
 
         return soup
 
-    '''
-    Getters for extractions
-
-    ##comment (can remove) - check this global formatting before merging, I'm iffy with classes
-    '''
     def get_courses(self):
         global course_final
         return course_final
