@@ -90,9 +90,9 @@ class LinkedinWebScrape():
             skills_show_more = driver.find_element_by_xpath('/html/body/div[6]/div[3]/div/div/div/div/div[3]/div/div/main/div/div/div[6]/div/section/div[2]/button')
             ActionChains(driver).move_to_element(skills_show_more).perform()
             sleep(0.5)
+            skills_show_more.click()
         except:
             pass
-        skills_show_more.click()
         sleep(1)
         html = driver.page_source
         soup = bs(html, 'html.parser')
@@ -131,7 +131,7 @@ class LinkedinWebScrape():
     def get_name(self):
         global name_final
         return name_final
-        
+
 
     def scrape_name(self, soup):
         global name_final
