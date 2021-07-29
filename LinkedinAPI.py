@@ -82,9 +82,7 @@ class LinkedinWebScrape():
         scroll = driver.find_element_by_tag_name('html')
         scroll.send_keys(Keys.END)
         sleep(1)
-        scroll.send_keys(Keys.PAGE_UP)
-        sleep(1)
-        scroll.send_keys(Keys.PAGE_UP)
+        scroll.send_keys(Keys.HOME)
         sleep(1)
         try:
             skills_show_more = driver.find_element_by_xpath('/html/body/div[6]/div[3]/div/div/div/div/div[3]/div/div/main/div/div/div[6]/div/section/div[2]/button')
