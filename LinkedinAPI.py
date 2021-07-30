@@ -129,6 +129,9 @@ class LinkedinWebScrape():
         global name_final
         return name_final
 
+    def get_about(self):
+        global about_final
+        return about_final
 
     def scrape_name(self, soup):
         global name_final
