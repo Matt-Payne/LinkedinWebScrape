@@ -10,6 +10,7 @@ import json
 
 class LinkedinWebScrape():
     name_final = ''
+    about_final = ''
     experience_final = []
     education_final = []
     volunteer_final = []
@@ -71,7 +72,9 @@ class LinkedinWebScrape():
         global volunteer_final
         global course_final
         global skills_final
+        global about_final
         name_final = ''
+        about_final = ''
         experience_final = []
         education_final = []
         certificate_final = []
@@ -132,6 +135,12 @@ class LinkedinWebScrape():
         # Grabs Name Information
         name = soup.find(lambda tag: tag.name == 'h1' and tag.has_attr('class'))
         name_final = name.get_text().strip()
+
+    def scrape_about(self, soup):
+        global about_final
+        about = soup.find(lambda tag: tag.name == 'section' and tag.has_attr('class') and tag['class'][1] == 'pv-about-section')
+        about_final = about.get_text().strip()
+
 
     def scrape_experience(self, soup):
         global experience_final
@@ -227,6 +236,7 @@ class LinkedinWebScrape():
 
     def file_save(self):
         global name_final
+        global about_final
         global experience_final
         global education_final
         global certificate_final
@@ -236,6 +246,7 @@ class LinkedinWebScrape():
         out_file = open("data.json", "w")
         output = {
             name_final: {
+                "About": about_final,
                 "Experience": experience_final,
                 "Education": education_final,
                 "Certifications": certificate_final,
