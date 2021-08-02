@@ -29,6 +29,8 @@ class LinkedinWebScrape():
     # returns the beautifulsoup html parsed instance
     def login(self):
         global driver
+        option = webdriver.ChromeOptions()
+        option.add_argument('headless')
         driver = webdriver.Chrome(self.driver_location)
 
         # driver.get method() will navigate to a page given by the URL address
@@ -141,7 +143,7 @@ class LinkedinWebScrape():
 
     def scrape_about(self, soup):
         global about_final
-        about = soup.find(lambda tag: tag.name == 'section' and tag.has_attr('class') and tag['class'][1] == 'pv-about-section')
+        about = soup.find(lambda tag: tag.name == 'section' and tag.has_attr('class') and len(tag['class']) >= 2 and tag['class'][1] == 'pv-about-section')
         about_final = about.get_text().strip()
 
 
@@ -260,3 +262,17 @@ class LinkedinWebScrape():
         }
         json.dump(output, out_file, indent = 6)
         out_file.close()
+
+temp = LinkedinWebScrape('C:/Users/pamjw/Desktop/chromedriver.exe','naw3228@gmail.com',"WhiteWizards3228!")
+temp.login()
+soup = temp.load_html('https://www.linkedin.com/in/samith-chowdhury/')
+temp.scrape_skills(soup)
+temp.scrape_course(soup)
+temp.scrape_name(soup)
+temp.scrape_certificate(soup)
+temp.scrape_volunteer(soup)
+temp.scrape_education(soup)
+temp.scrape_experience(soup)
+temp.scrape_about(soup)
+temp.file_save()
+

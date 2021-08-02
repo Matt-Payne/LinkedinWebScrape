@@ -1,130 +1,65 @@
 {
-      "Osama Ehsan": {
+      "Samith Chowdhury": {
+            "About": "About\n  \n\n\n\n    Motivated Electrical Engineering student seeking to leverage excellent technical and personal skills to succeed in this field. Experienced in a variety of programming languages and applications, such as Python, VB, C#, HTML, CSS, VM, Adobe Photoshop, Adobe Premiere Pro, Autodesk Inventor, Matlab, etcetera; and in a variety of hardware projects, such as computer hardware assembly, Raspberry Pi, Arduino, automotive technology (ASE certified), etcetera.\n  \n      \n\u2026\n\n          see more",
             "Experience": [
                   {
-                        "Role": "Quality Assurance Automation Engineer",
-                        "Company Name": "Ztech studios",
-                        "Description": "Working on the automation of the cloud based web application for AWS. AutomatedIntegration/API testing using POSTMAN, Unit level automated testing usingMocha/Chai and Front-end/Browser automated testing with selenium webdriver. Myfocus is towards automating the testing of cloud based web application\n  \n      \n\u2026\n\n          see more"
+                        "Role": "Electrical Engineering Intern",
+                        "Company Name": "US Navy\n        Full-time",
+                        "Description": "Operating in the electromagnetic and sensor systems department for topside research and development across the fleet of US Navy and Coast Guard ships and cutters."
                   },
                   {
-                        "Role": "Intern",
-                        "Company Name": "QUEST, Software Quality Engineering & Testing Laboratory",
-                        "Description": "Worked on Selenium, which is a suite of tools to automate web browsers across many platforms. I updated the functionality of the Selenium IDE by running the multiple scripts automatically from a java based tool. This tools generate the important test data for the test scripts and executes the scripts via selenium IDE.\n  \n      \n\u2026\n\n          see more"
+                        "Role": "Co-Founder",
+                        "Company Name": "KIS & Company",
+                        "Description": "Research Market and Products, Sales Projections, Marketing, Web Development and Management, and Customer & Employee Relations"
+                  },
+                  {
+                        "Role": "Assistant Manager",
+                        "Company Name": "Firehouse Subs",
+                        "Description": "Ensures the restaurant is in full compliance with all local, state and federal regulations to include health regulations, hour and wage regulations, age restrictions, fair employment practices, ADA, OSHA and any other appropriate regulations required for the legal operation of business changes/deletions; Ensures knowledge, adherence and enforcement of all Firehouse Subs Policies and Procedures; Provides leadership to the restaurant team so that each team member consistently meets our standards of superior customer service, quality and cleanliness, while embracing the Firehouse Subs \"Culture\" of a cheerful and fun work environment; Ensures the profitability of the business by operating within established guidelines and requirements for sales growth, food cost, labor, and controllable costs; Coordinates and implements current operations game plans and company initiatives and store marketing in a profitable and timely manner; Accountable for the proper staffing of the restaurant with qualified personnel; Accountable for the continuous training and development of the restaurant personnel including other managers and shift leaders; Ensures all required programs, reports and legal documents are accurate, complete and accomplished on schedule; Assists and manages any/all duties assigned by Owner; and Maintains a safe and secure work and dining environment\n  \n      \n\u2026\n\n          see more"
                   }
             ],
             "Education": [
                   {
-                        "Education Name": "Queen's University",
-                        "Education Level": "Doctor of Philosophy - PhD",
+                        "Education Name": "Christopher Newport University",
+                        "Education Level": "Bachelor of Engineering - BE",
                         "Education Description": ""
                   },
                   {
-                        "Education Name": "National University of Computer and Emerging Sciences",
-                        "Education Level": "Master's degree",
-                        "Education Description": "Bronze Medalist"
+                        "Education Name": "Rochester Institute of Technology",
+                        "Education Level": "Project Lead The Way Program",
+                        "Education Description": "PLTW curriculum including: Introduction to Engineering Design, Civil Engineering & Architecture, Principles Of Engineering"
                   },
                   {
-                        "Education Name": "National University of Computer and Emerging Sciences",
-                        "Education Level": "Bachelor's degree",
-                        "Education Description": ""
+                        "Education Name": "North Stafford High School",
+                        "Education Level": "Advanced Diploma",
+                        "Education Description": "Senior Class Officer, Secretary3 Advance Placements & 1 Dual Enrollment (Germanna Community College)Seals: Governor\u2019s Early College Scholar & Certified Technical Education"
                   }
             ],
             "Certifications": [
                   {
-                        "Certificate Name": "\n    ISTQB CTAL (certifies tester advanced level)\n  ",
-                        "Certification Issuer": "Issued Aug 2017No Expiration Date",
-                        "Certificate ID": ""
+                        "Certificate Name": "\n    ServSafe Food Handler\n  ",
+                        "Certification Issuer": "NATIONAL RESTAURANT ASSOCIATION SOLUTION LLC",
+                        "Certificate ID": "Credential ID 4344862"
                   },
                   {
-                        "Certificate Name": "\n    ISTQB Certified Foundation Level Tester (CTFL)\n  ",
-                        "Certification Issuer": "ISTQB - International Software Testing Qualifications Board",
+                        "Certificate Name": "\n    Automotive Service Technicians And Mechanics\n  ",
+                        "Certification Issuer": "ASE Training Managers Council",
                         "Certificate ID": ""
                   }
             ],
             "Volunteer": [
                   {
-                        "Volunteer Role": "Head operations, Fast Computing Society",
-                        "Volunteer Cause": "\nEducation\n",
-                        "Volunteer Organization": "FAST-NUCES"
+                        "Volunteer Role": "Passport to Manhood",
+                        "Volunteer Cause": "\nChildren",
+                        "Volunteer Organization": "Boys & Girls Clubs of America"
                   },
                   {
-                        "Volunteer Role": "Volunteer at Nascon '14",
-                        "Volunteer Cause": "\nEducation\n",
-                        "Volunteer Organization": "FAST-NUCES"
+                        "Volunteer Role": "Student Volunteer",
+                        "Volunteer Cause": "\nEducation",
+                        "Volunteer Organization": "North Stafford High School"
                   }
             ],
-            "Courses": [
-                  {
-                        "Course Name": "Advanced Programming(java)"
-                  },
-                  {
-                        "Course Name": "Business Intelligence"
-                  },
-                  {
-                        "Course Name": "Data Warehousing"
-                  },
-                  {
-                        "Course Name": "Geographic information system"
-                  },
-                  {
-                        "Course Name": "Mobile Computing"
-                  },
-                  {
-                        "Course Name": "Software Testing"
-                  },
-                  {
-                        "Course Name": "Web Programming(asp.net)"
-                  },
-                  {
-                        "Course Name": "English"
-                  },
-                  {
-                        "Course Name": "Urdu"
-                  },
-                  {
-                        "Course Name": "Fault Model & Mutation Analysis for Functional testing of platform games"
-                  },
-                  {
-                        "Course Name": "Automated Game Testing Tool (Final Year Project)"
-                  },
-                  {
-                        "Course Name": "Bronze Medal"
-                  }
-            ],
-            "Skills": [
-                  {
-                        "Skill Name:": "Java"
-                  },
-                  {
-                        "Skill Name:": "C#"
-                  },
-                  {
-                        "Skill Name:": "Web Development"
-                  },
-                  {
-                        "Skill Name:": "Software Development"
-                  },
-                  {
-                        "Skill Name:": "Software Testing"
-                  },
-                  {
-                        "Skill Name:": "ASP.NET"
-                  },
-                  {
-                        "Skill Name:": "C++"
-                  },
-                  {
-                        "Skill Name:": "Microsoft SQL Server"
-                  },
-                  {
-                        "Skill Name:": "Selenium"
-                  },
-                  {
-                        "Skill Name:": "JavaScript"
-                  },
-                  {
-                        "Skill Name:": "HTML"
-                  }
-            ]
+            "Courses": [],
+            "Skills": []
       }
 }
